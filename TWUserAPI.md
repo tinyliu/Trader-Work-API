@@ -691,7 +691,7 @@ GET http://twapi.lwork.com/v1/api/account/4b07e7af-798a-4f68-9b2c-561a8300eac2/i
 POST /v1/api/account/{userId}/update
 ```
 
-Modify user `userId`account info，请求的参数信息参数查询账户资料返回的账户资料
+Modify user `userId`account info 
 
 #### Request Parameters
 
