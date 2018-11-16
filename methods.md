@@ -1,38 +1,39 @@
-# 1.1 查询城市编码 {#country}
+#
+1.1 Query City Code {#country}
 
 ```
 GET /v1/api/sys/countryCity?lang={lang}&pid={pid}
 ```
 
-获取指定语言`lang`、指定国家或省份`pid`的城市列表
+Acquire language`lang`、Counry or province`pid` 
 
 #### Request Parameters
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| lang | no | string | 语言：`zh-CN`，`en-US`，`zh-HK` |
-| pid | no | string | 上级城市id |
+| lang | no | string | Language ：`zh-CN`，`en-US`，`zh-HK` |
+| pid | no | string | Superior City id |
 
 #### Response
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| _result_ | _boolean_ | _请求是否成功_ |
-| _mcode_ | _string_ | _错误信息_ |
-| _data_ | _array_ | _数据内容_ |
-| pid | string | 上级城市id |
-| id | string | 城市id |
-| value | string | 国家/省份/城市名称 |
+| _result_ | _boolean_ | _Request success or not_ |
+| _mcode_ | _string_ | _Error info_ |
+| _data_ | _array_ | _Data content_ |
+| pid | string | Superior City id |
+| id | string | City id |
+| value | string | Country/Province/City Name |
 
 #### Example
 
-**请求示例**
+**Request Sample**
 
 ```
 GET http://twapi.lwork.com/v1/api/sys/countryCity?lang=zh-CN
 ```
 
-**返回示例**
+**Return Sample**
 
 ```json
 {
@@ -42,54 +43,54 @@ GET http://twapi.lwork.com/v1/api/sys/countryCity?lang=zh-CN
 {
 "pid":"0",
 "id":"1",
-"value":"中国大陆"
+"value":"China"
 },
 {
 "pid":"1",
 "id":"2",
-"value":"北京"
+"value":"Beijing"
 },
 {
 "pid":"2",
 "id":"3",
-"value":"东城"
+"value":"DongCheng"
 }]
 }
 ```
 
-# 1.2 查询访问设置 {#access}
+# 1.2 Query Access Setting{#access}
 
 ```
 GET /v1/api/sys/config/access
 ```
 
-获取 Support Center - Trader Work 访问设置中所设规则
+Acquire Support Center - Trader Work Query Access Setting
 
 #### Response
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| _result_ | _boolean_ | _请求是否成功_ |
-| _mcode_ | _string_ | _错误信息_ |
-| _data_ | _array_ | _数据内容_ |
-| allowEmail | boolean | 是否允许邮箱注册 |
-| allowPhone | boolean | 是否允许手机注册 |
-| lockLoginFailTimes | int | 密码输错锁定次数 |
-| logoutTime | int | 超时登出时间 |
-| pwdRegexMap | object | 密码强度正则表达式 |
-| pwdStrength | string | 密码强度 |
-| registrable | boolean | 是否开放注册 |
-| verificationLoginFailTimes | int | 登录出现滑动验证码的密码输错次数 |
+| _result_ | _boolean_ | _Request success or not_ |
+| _mcode_ | _string_ | _Error Info_ |
+| _data_ | _array_ | _Data Content_ |
+| allowEmail | boolean | Permit register by email or not |
+| allowPhone | boolean | Permit register by mobile nor not |
+| lockLoginFailTimes | int | Password input error lock number |
+| logoutTime | int | Timeout time |
+| pwdRegexMap | object | Password Strength Regular Expression|
+| pwdStrength | string | Password Strength |
+| registrable | boolean | Open register or not |
+| verificationLoginFailTimes | int | The number of password errors entered in the login verification code |
 
 #### Example
 
-**请求示例**
+**Request Sample**
 
 ```
 GET http://twapi.lwork.com/v1/api/sys/config/access
 ```
 
-**返回示例**
+**Return Sample**
 
 ```json
 {
@@ -112,54 +113,54 @@ GET http://twapi.lwork.com/v1/api/sys/config/access
 }
 ```
 
-# 1.3 查询入金设置 {#depositconfig}
+# 1.3 Query deposit setting {#depositconfig}
 
 ```
 GET /v1/api/sys/config/deposit?platform={platform}
 ```
 
-查询Support Center中交易平台`platform`的入金配置
+Query Support Center's reading platform`platform` deposit setting
 
 #### Request Parameters
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| platform | no | string | 交易平台：`MT4`, `MT5` |
+| platform | no | string | trading platform：`MT4`, `MT5` |
 
 #### Response
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| _result_ | _boolean_ | _请求是否成功_ |
-| _mcode_ | _string_ | _错误信息_ |
-| _data_ | _array_ | _数据内容_ |
-| charge | double | 手续费 |
-| showCharge | boolean | 是否展示手续费 |
-| exchangeRateSettings | array | 汇率设置 |
-| exchange | double | 当前汇率 |
-| exchangeFloat | double | 汇率上浮 |
-| exchangeMode | string | 汇率类型 |
-| payCurrency | string | 支付货币 |
-| showExchange | boolean | 是否展示汇率 |
-| transactionCurrency | string | 交易货币 |
-| minDeposit | double | 最低入金金额 |
-| maxDeposit | double | 最高入金金额 |
-| payList | array | 支付平台列表 |
-| providerId | string | 支付平台id |
-| providerName | string | 支付平台名称 |
-| name | string | 支付平台别名 |
-| currency | string | 支付货币 |
-| telegraphic | string | 电汇入金信息 |
+| _result_ | _boolean_ | _Request success or not_ |
+| _mcode_ | _string_ | _Error info_ |
+| _data_ | _array_ | _Data content_ |
+| charge | double | Charge Fee |
+| showCharge | boolean | Shows charge fee or not |
+| exchangeRateSettings | array | Currency rate setting |
+| exchange | double | Current currency |
+| exchangeFloat | double | Curreny rate floating |
+| exchangeMode | string | Currency rate style |
+| payCurrency | string | Payment currency|
+| showExchange | boolean | Shows the currency rate or not |
+| transactionCurrency | string | Trading Currency |
+| minDeposit | double | Minimal deposit |
+| maxDeposit | double | Highest deposit amount |
+| payList | array | Payment platform list |
+| providerId | string | Payment platform id |
+| providerName | string | Payment platform Name |
+| name | string | Payment platform another Name |
+| currency | string | Payment currency |
+| telegraphic | string | Wire transfer information |
 
 #### Example
 
-**请求示例**
+**Request Sample**
 
 ```
 GET http://twapi.lwork.com/v1/api/sys/config/deposit?platform=MT4
 ```
 
-**返回示例**
+**Return Sample**
 
 ```json
 {
@@ -188,9 +189,9 @@ GET http://twapi.lwork.com/v1/api/sys/config/deposit?platform=MT4
 "payList": [
 {
 "currency": "CNY",
-"name": "LW支付通道",
+"name": "LW Payment Channel",
 "providerId": "3",
-"providerName": "sina支付"
+"providerName": "sina Payment"
 },
 {
 "currency": "NZD",
@@ -207,367 +208,367 @@ GET http://twapi.lwork.com/v1/api/sys/config/deposit?platform=MT4
 }
 ```
 
-# 1.4 查询账户字段设置 {#fields}
+# 1.4 Query account field setting {#fields}
 
 ```
 GET /v1/api/account/info/fields
 ```
 
-查询Support Center中的账户所有人资料的字段配置
+Query Support Center account owner's info fields setting
 
 #### Headers Request Parameters
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| x-language | yes | string | 语言：`en-US`,`zh-CN` |
+| x-language | yes | string | Language：`en-US`,`zh-CN` |
 
 #### Response
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| _result_ | _boolean_ | _请求是否成功_ |
-| _mcode_ | _string_ | _错误信息_ |
-| _data_ | _array_ | _数据内容_ |
-| t\_account\_profiles | array | 账户基本信息 |
-| columns | string | 占列 |
-| enable | boolean | 启用状态 |
-| fieldType | string | 字段类型 |
-| key | string | 字段key |
-| label | boolean | 标签 |
-| orderNo | int | 排序 |
-| overuse | boolean |  |
-| readonly | boolean | 只读 |
-| searchable | boolean |  |
-| size | int | 字段长度 |
-| sysDefault | boolean |  |
-| unique | boolean | 是否唯一 |
-| validateType | object | 校验类型 |
-| phone | boolean | 是否手机 |
-| email | boolean | 是否邮箱 |
-| required | boolean | 是否必填 |
-| t\_account\_finacial | array | 账户财务信息 |
-| columns | string | 占列 |
-| enable | boolean | 启用状态 |
-| fieldType | string | 字段类型 |
-| key | string | 字段key |
-| label | boolean | 标签 |
-| orderNo | int | 排序 |
-| overuse | boolean |  |
-| readonly | boolean | 只读 |
-| searchable | boolean |  |
-| size | int | 字段长度 |
-| sysDefault | boolean |  |
-| unique | boolean | 是否唯一 |
-| validateType | object | 校验类型 |
-| phone | boolean | 是否手机 |
-| email | boolean | 是否邮箱 |
-| required | boolean | 是否必填 |
-| t\_account\_id\_info | array | 账户证件信息 |
-| columns | string | 占列 |
-| enable | boolean | 启用状态 |
-| fieldType | string | 字段类型 |
-| key | string | 字段key |
-| label | boolean | 标签 |
-| orderNo | int | 排序 |
-| overuse | boolean |  |
-| readonly | boolean | 只读 |
-| searchable | boolean |  |
-| size | int | 字段长度 |
-| sysDefault | boolean |  |
-| unique | boolean | 是否唯一 |
-| validateType | object | 校验类型 |
-| phone | boolean | 是否手机 |
-| email | boolean | 是否邮箱 |
-| required | boolean | 是否必填 |
+| _result_ | _boolean_ | _Request Success or not_ |
+| _mcode_ | _string_ | _Error info_ |
+| _data_ | _array_ | _Data content_ |
+| t\_account\_profiles | array | Account baseInfo |
+| columns | string | Occupy columns |
+| enable | boolean | Enable status |
+| fieldType | string | field Type |
+| key | string | field key |
+| label | boolean | label |
+| orderNo | int | Order |
+| overuse | boolean | |
+| readonly | boolean | Read Only |
+| searchable | boolean | |
+| size | int | field size |
+| sysDefault | boolean | |
+| unique | boolean | If one and only |
+| validateType | object | valid Type |
+| phone | boolean | If mobile |
+| email | boolean | If email |
+| required | boolean | If required |
+| t\_account\_finacial | array | Financial account info |
+| columns | string | Occupy columns |
+| enable | boolean | Enable Status |
+| fieldType | string | Field Type |
+| key | string | field key |
+| label | boolean | Label |
+| orderNo | int | Order No |
+| overuse | boolean | |
+| readonly | boolean | Read Only |
+| searchable | boolean | |
+| size | int | Field size |
+| sysDefault | boolean | |
+| unique | boolean | If one and only |
+| validateType | object | validate Type |
+| phone | boolean | If mobile |
+| email | boolean | If email |
+| required | boolean | If required |
+| t\_account\_id\_info | array | account ID info |
+| columns | string | Occupy columns |
+| enable | boolean | Enable status |
+| fieldType | string | Field Type |
+| key | string | Field key |
+| label | boolean | Label |
+| orderNo | int | Order No|
+| overuse | boolean | |
+| readonly | boolean | Read Only |
+| searchable | boolean | |
+| size | int | Field size |
+| sysDefault | boolean | |
+| unique | boolean | If one and only |
+| validateType | object | validate Type |
+| phone | boolean | If mobile  |
+| email | boolean | If email |
+| required | boolean | If required |
 
 #### Example
 
-**请求示例**
+**Request sample**
 
 ```
 GET http://twapi.lwork.com/v1/api/account/info/fields
 ```
 
-**返回示例**
+**Return Sample**
 
 ```json
 {
-  "data": {
-    "t_account_profiles": [
-      {
-        "columns": "1",
-        "enable": true,
-        "fieldType": "text",
-        "key": "accountName",
-        "label": "姓名",
-        "orderNo": 1,
-        "overuse": true,
-        "readonly": false,
-        "searchable": false,
-        "size": 40,
-        "sysDefault": true,
-        "unique": false,
-        "validateType": {
-          "required": true
-        }
-      },
-      {
-        "columns": "1",
-        "defaultValue": "0",
-        "enable": true,
-        "fieldType": "select",
-        "key": "gender",
-        "label": "性别",
-        "optionList": [
-          {
-            "label": "男",
-            "value": "0"
-          },
-          {
-            "label": "女",
-            "value": "1"
-          }
-        ],
-        "orderNo": 2,
-        "overuse": false,
-        "readonly": false,
-        "searchable": false,
-        "size": 50,
-        "sysDefault": false,
-        "unique": false,
-        "validateType": {}
-      },
-      {
-        "columns": "1",
-        "enable": true,
-        "fieldType": "phone",
-        "key": "phones",
-        "label": "手机",
-        "orderNo": 5,
-        "overuse": false,
-        "readonly": false,
-        "searchable": false,
-        "size": 50,
-        "sysDefault": true,
-        "unique": false,
-        "validateType": {
-          "phone": true,
-          "required": true
-        }
-      },
-      {
-        "columns": "1",
-        "enable": true,
-        "fieldType": "text",
-        "key": "email",
-        "label": "邮箱",
-        "orderNo": 6,
-        "overuse": false,
-        "readonly": false,
-        "searchable": false,
-        "size": 50,
-        "sysDefault": true,
-        "unique": false,
-        "validateType": {
-          "required": true,
-          "email": true
-        }
-      },
-      ...
-    ],
-    "t_account_id_info": [
-      {
-        "columns": "1",
-        "defaultValue": "1",
-        "enable": true,
-        "fieldType": "select",
-        "key": "idType",
-        "label": "身份证明类型",
-        "optionList": [
-          {
-            "label": "营业执照",
-            "value": "1"
-          },
-          {
-            "label": "组织机构代码证",
-            "value": "2"
-          },
-          ...
-        ],
-        "orderNo": 1,
-        "overuse": true,
-        "readonly": false,
-        "searchable": false,
-        "size": 50,
-        "sysDefault": false,
-        "unique": false,
-        "validateType": {
-          "required": true
-        }
-      },
-      {
-        "columns": "1",
-        "enable": true,
-        "fieldType": "text",
-        "key": "idNum",
-        "label": "身份证明号码",
-        "orderNo": 2,
-        "overuse": true,
-        "readonly": false,
-        "searchable": false,
-        "size": 50,
-        "sysDefault": false,
-        "unique": false,
-        "validateType": {
-          "required": true
-        }
-      },
-      ...
-    ],
-    "t_account_finacial": [
-      {
-        "columns": "1",
-        "defaultValue": "1",
-        "enable": true,
-        "fieldType": "select",
-        "key": "totalAssets",
-        "label": "总资产",
-        "optionList": [
-          {
-            "label": "0-500,000",
-            "value": "1"
-          },
-          {
-            "label": "500,001-1,000,000",
-            "value": "2"
-          },
-          ...
-        ],
-        "orderNo": 1,
-        "overuse": false,
-        "readonly": false,
-        "searchable": false,
-        "size": 50,
-        "sysDefault": false,
-        "unique": false,
-        "validateType": {}
-      },
-      {
-        "columns": "1",
-        "defaultValue": "1",
-        "enable": true,
-        "fieldType": "select",
-        "key": "netAssets",
-        "label": "净资产",
-        "optionList": [
-          {
-            "label": "0-500,000",
-            "value": "1"
-          },
-          {
-            "label": "500,001-1,000,000",
-            "value": "2"
-          },
-          ...
-        ],
-        "orderNo": 2,
-        "overuse": false,
-        "readonly": false,
-        "searchable": false,
-        "size": 50,
-        "sysDefault": false,
-        "unique": false,
-        "validateType": {}
-      },
-      ...
-    ]
-  },
-  "mcode": "m0000000",
-  "result": true
+"data": {
+"t_account_profiles": [
+{
+"columns": "1",
+"enable": true,
+"fieldType": "text",
+"key": "accountName",
+"label": "Name",
+"orderNo": 1,
+"overuse": true,
+"readonly": false,
+"searchable": false,
+"size": 40,
+"sysDefault": true,
+"unique": false,
+"validateType": {
+"required": true
+}
+},
+{
+"columns": "1",
+"defaultValue": "0",
+"enable": true,
+"fieldType": "select",
+"key": "gender",
+"label": "Gender",
+"optionList": [
+{
+"label": "Male",
+"value": "0"
+},
+{
+"label": "Female",
+"value": "1"
+}
+],
+"orderNo": 2,
+"overuse": false,
+"readonly": false,
+"searchable": false,
+"size": 50,
+"sysDefault": false,
+"unique": false,
+"validateType": {}
+},
+{
+"columns": "1",
+"enable": true,
+"fieldType": "phone",
+"key": "phones",
+"label": "Mobile",
+"orderNo": 5,
+"overuse": false,
+"readonly": false,
+"searchable": false,
+"size": 50,
+"sysDefault": true,
+"unique": false,
+"validateType": {
+"phone": true,
+"required": true
+}
+},
+{
+"columns": "1",
+"enable": true,
+"fieldType": "text",
+"key": "email",
+"label": "Email",
+"orderNo": 6,
+"overuse": false,
+"readonly": false,
+"searchable": false,
+"size": 50,
+"sysDefault": true,
+"unique": false,
+"validateType": {
+"required": true,
+"email": true
+}
+},
+...
+],
+"t_account_id_info": [
+{
+"columns": "1",
+"defaultValue": "1",
+"enable": true,
+"fieldType": "select",
+"key": "idType",
+"label": "Identity Type",
+"optionList": [
+{
+"label": "Business License",
+"value": "1"
+},
+{
+"label": "Organization Code Certificate",
+"value": "2"
+},
+...
+],
+"orderNo": 1,
+"overuse": true,
+"readonly": false,
+"searchable": false,
+"size": 50,
+"sysDefault": false,
+"unique": false,
+"validateType": {
+"required": true
+}
+},
+{
+"columns": "1",
+"enable": true,
+"fieldType": "text",
+"key": "idNum",
+"label": "ID number",
+"orderNo": 2,
+"overuse": true,
+"readonly": false,
+"searchable": false,
+"size": 50,
+"sysDefault": false,
+"unique": false,
+"validateType": {
+"required": true
+}
+},
+...
+],
+"t_account_finacial": [
+{
+"columns": "1",
+"defaultValue": "1",
+"enable": true,
+"fieldType": "select",
+"key": "totalAssets",
+"label": "Total Assets",
+"optionList": [
+{
+"label": "0-500,000",
+"value": "1"
+},
+{
+"label": "500,001-1,000,000",
+"value": "2"
+},
+...
+],
+"orderNo": 1,
+"overuse": false,
+"readonly": false,
+"searchable": false,
+"size": 50,
+"sysDefault": false,
+"unique": false,
+"validateType": {}
+},
+{
+"columns": "1",
+"defaultValue": "1",
+"enable": true,
+"fieldType": "select",
+"key": "netAssets",
+"label": "Net Assets",
+"optionList": [
+{
+"label": "0-500,000",
+"value": "1"
+},
+{
+"label": "500,001-1,000,000",
+"value": "2"
+},
+...
+],
+"orderNo": 2,
+"overuse": false,
+"readonly": false,
+"searchable": false,
+"size": 50,
+"sysDefault": false,
+"unique": false,
+"validateType": {}
+},
+...
+]
+},
+"mcode": "m0000000",
+"result": true
 }
 ```
 
-# 1.5 查询错误编码 {#errorcode}
+# 1.5 Query Error Code {#errorcode}
 
 ```
 GET /v1/api/sys/error/code?lang={lang}
 ```
 
-获取指定语言`lang`的错误信息
+Access language`lang`Error Info
 
 #### Request Parameters
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| lang | no | string | 语言：`zh-CN`，`en-US`，`zh-HK` |
+| lang | no | string | Language：`zh-CN`，`en-US`，`zh-HK` |
 
 #### Response
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| _result_ | _boolean_ | _请求是否成功_ |
-| _mcode_ | _string_ | _错误信息_ |
-| _data_ | _array_ | _数据内容_ |
-| code | string | 错误码 |
-| value | string | 错误信息 |
+| _result_ | _boolean_ | _Request Success nor not_ |
+| _mcode_ | _string_ | _Error info_ |
+| _data_ | _array_ | _Data content_ |
+| code | string | Error code |
+| value | string | Error Info_ |
 
 #### Example
 
-**请求示例**
+**Request Sample**
 
 ```
 GET http://twapi.lwork.com/v1/api/sys/error/code?lang=zh-CN
 ```
 
-**返回示例**
+**Return Sample**
 
 ```json
 {
-  "result": true,
-  "mcode":"m0000000",
-  "data": [
-      {
-        "code": "-1",
-        "value": "系统错误"
-      },
-      {
-        "code": "PUB_AUTH_0000001",
-        "value": "邮箱格式错误"
-      },
-      {
-        "code": "PUB_AUTH_0000002",
-        "value": "手机格式错误"
-      },
-      ...
-  ]
+"result": true,
+"mcode":"m0000000",
+"data": [
+{
+"code": "-1",
+"value": "System Error"
+},
+{
+"code": "PUB_AUTH_0000001",
+"value": "Email Style Error"
+},
+{
+"code": "PUB_AUTH_0000002",
+"value": "Mobile Style Error"
+},
+...
+]
 }
 ```
 
-# 1.6 上传图片文件 {#upload}
+# 1.6 Upload Photo File {#upload}
 
 ```
 POST /v1/api/upload/file
 ```
 
-上传图片文件
+Upload Photo file
 
 #### Request Parameters
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| file | yes | file | 上传的文件，不超过5M，格式：`jpg`,`png`,`bmp`,`gif`,`jpeg`,`pdf` |
+| file | yes | file | Upload file smaller than 5M，format：`jpg`,`png`,`bmp`,`gif`,`jpeg`,`pdf` |
 
 #### Response
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| result | boolean | 请求是否成功 |
-| mcode | string | 错误信息 |
-| data | array | 文件访问地址 |
+| result | boolean | Request success or not |
+| mcode | string | Error info |
+| data | array | File access address |
 
 #### Example
 
-**请求示例**
+**Request Sample**
 
 ```
 POST http://twapi.lwork.com/v1/api/upload/file
@@ -575,89 +576,89 @@ POST http://twapi.lwork.com/v1/api/upload/file
 
 ```html
 <form action="/v1/api/upload/file" enctype="multipart/form-data" method="POST">
- <input name="image" type="file"></input><br/>
- <input name="submit" type="submit">提交</input>
+<input name="image" type="file"></input><br/>
+<input name="submit" type="submit">Submit</input>
 </form>
 ```
 
-**返回示例**
+**Return Sample**
 
 ```json
 {
-  "result": true,
-  "mcode":"m0000000",
-  "data": "/ali/oss/preview/leanwork-fs?fName=tw/dev/T001117/0384062a-368a-4992-9197-55b675e11586.jpg"
+"result": true,
+"mcode":"m0000000",
+"data": "/ali/oss/preview/leanwork-fs?fName=tw/dev/T001117/0384062a-368a-4992-9197-55b675e11586.jpg"
 }
 ```
 
-# 1.7 查询模拟账户配置 {#demotype}
+# 1.7 Query Demo account setting {#demotype}
 
 ```
-    GET /v1/api/sys/conf/demo/account/type?platform={platform}
+GET /v1/api/sys/conf/demo/account/type?platform={platform}
 ```
 
-获取 Support Center - Trader Work 平台设置中相关platform MT4或MT5 -&gt; 开户设置 -&gt; 模拟账户类型设置中所设规则
+Acquire Support Center - Trader Work setting platform MT4 or MT5 -&gt; Open account setting -&gt; Rule set by demo account style 
 
 #### Request Parameters
 
 | Name | Required | Type | Description |
 | --- | --- | --- | --- |
-| platform | yes | string | 交易平台：MT4, MT5 |
+| platform | yes | string | Trading Platform：MT4, MT5 |
 
 #### Response
 
 | Name | Type | Description |
 | --- | --- | --- |
-| result | boolean | 请求是否成功 |
-| mcode | string | 错误信息 |
-| data | array | 数据内容 |
-| accountGroup | string | MT组 |
-| initAmount | int | 初始金额 |
-| leverage | int | 杠杆 |
-| typeId | string | 模拟账户类型ID |
-| typeName | string | 模拟账户类型名字 |
+| result | boolean | Request Success or not |
+| mcode | string | Error Info |
+| data | array | Data Content |
+| accountGroup | string | MT Group |
+| initAmount | int | Initial Amount |
+| leverage | int | Leverage |
+| typeId | string | Demo account style |
+| typeName | string | Demo account style Name |
 
 #### Example
 
-**请求示例**
+**Request Sample**
 
 ```
-    GET /v1/api/sys/conf/demo/account/type?platform=MT4
+GET /v1/api/sys/conf/demo/account/type?platform=MT4
 ```
 
-**返回示例**
+**Return Sample**
 
 ```json
 {
-    "data": [
-        {
-            "accountGroup": "D04DemoLWVIR",
-            "initAmount": 10000,
-            "leverage": 100,
-            "typeId": "2e852672-dd6e-4ede-a6dc-7108c234dcd7",
-            "typeName": "一般用户"
-        },
-        {
-            "accountGroup": "D04DemoLWVIR",
-            "initAmount": 20000,
-            "leverage": 100,
-            "typeId": "cdc44f28-0a3c-4569-90e9-ba56f73be7c1",
-            "typeName": "贵宾客户"
-        },
-        {
-            "accountGroup": "D04DemoLWVIR",
-            "initAmount": 50000,
-            "leverage": 400,
-            "typeId": "fa17962a-30ff-43f5-9e33-2a7ba25060ec",
-            "typeName": "VIP客户"
-        }
-    ],
-    "mcode": "m0000000",
-    "result": true
+"data": [
+{
+"accountGroup": "D04DemoLWVIR",
+"initAmount": 10000,
+"leverage": 100,
+"typeId": "2e852672-dd6e-4ede-a6dc-7108c234dcd7",
+"typeName": "General User"
+},
+{
+"accountGroup": "D04DemoLWVIR",
+"initAmount": 20000,
+"leverage": 100,
+"typeId": "cdc44f28-0a3c-4569-90e9-ba56f73be7c1",
+"typeName": "VIP user"
+},
+{
+"accountGroup": "D04DemoLWVIR",
+"initAmount": 50000,
+"leverage": 400,
+"typeId": "fa17962a-30ff-43f5-9e33-2a7ba25060ec",
+"typeName": "VIP user"
+}
+],
+"mcode": "m0000000",
+"result": true
 }
 ```
 
-# 1.8 银行列表中新增银行 {#bank}
+# 1.8 Ade new banks in bank list {#bank}
 
 ```
 POST /v1/api/sys/set/bank/name
@@ -667,19 +668,19 @@ POST /v1/api/sys/set/bank/name
 
 | Name | Required | Type | Description |
 | --- | --- | --- | --- |
-| bankName | yes | string | 新增的银行名字 |
+| bankName | yes | string | New bank names |
 
 #### Response
 
 | Name | Type | Description |
 | --- | --- | --- |
-| result | boolean | 请求是否成功 |
-| mcode | string | 错误信息 |
-| data | Void | 数据内容 |
+| result | boolean | Request success or not |
+| mcode | string | Error info |
+| data | Void | Data Content  |
 
 #### Example
 
-#### 请求示例
+#### Request Sample
 
 ```
 POST /v1/api/sys/set/bank/name
@@ -688,16 +689,16 @@ POST /v1/api/sys/set/bank/name
 }
 ```
 
-#### 返回示例
+#### Return Sample
 
 ```
 {
-    "mcode": "m0000000",
-    "result": true
+"mcode": "m0000000",
+"result": true
 }
 ```
 
-# 1.9 从SC获取真实账户开户字段设置 {#scField}
+# 1.9 Get real account account opening field settings from SC {#scField}
 
 ```
 GET /v1/api/account/open/info/{vendor}/fields
@@ -707,45 +708,45 @@ GET /v1/api/account/open/info/{vendor}/fields
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| vendor | yes | string | 平台名称 |
+| vendor | yes | string | Platform name |
 
 #### Response
 
 | Name | Type | Description |
 | --- | --- | --- |
-| result | boolean | 请求是否成功 |
-| mcode | string | 错误信息 |
-| firstStepFieldList | array | 开户第一步baseInfo所需的字段设置信息 |
-| key | string | 字段key |
-| validateType.required | bool | 是否必需 |
-| fieldType | string | 字段类型 |
-| enable | bool | 是否启用 |
-| secondStepFieldList | array | 开户第二步financialInfo所需的字段设置信息 |
-| key | string | 字段key |
-| validateType.required | bool | 是否必需 |
-| fieldType | string | 字段类型 |
-| enable | bool | 是否启用 |
-| thirdStepFieldList | array | 开户第三步financialInfo所需的字段设置信息 |
-| key | string | 字段key |
-| validateType.required | bool | 是否必需 |
-| fieldType | string | 字段类型 |
-| enable | bool | 是否启用 |
+| result | boolean | Request success or not |
+| mcode | string | Error info |
+| firstStepFieldList | array | Open account 1st step  baseInfo Required field setup information |
+| key | string | field key |
+| validateType.required | bool | If required |
+| fieldType | string | Field Type |
+| enable | bool | If enable |
+| secondStepFieldList | array | Open account 2nd step financialInfo Required field setup information |
+| key | string | Field key |
+| validateType.required | bool | If required |
+| fieldType | string | Field Type |
+| enable | bool | If enable |
+| thirdStepFieldList | array | Open account 3rd step financialInfo Required field setup information |
+| key | string | Field key |
+| validateType.required | bool | If required |
+| fieldType | string | Field Type |
+| enable | bool | If enable |
 
 #### Example
 
-#### 请求示例
+#### Request Sample
 
 ```
 GET /v1/api/account/open/info/MT4/fields
 
- curl -v   \
-    -H "x-api-token:6WuPfOEXToAif3ie" \
-    -H "x-language:zh-CN" \
-    -H "x-api-tenantId:T001117" \
-    -H "content-type:application/json" \
-    http://trader.tamsc.lwork.com:10703/release/info
+curl -v \
+-H "x-api-token:6WuPfOEXToAif3ie" \
+-H "x-language:zh-CN" \
+-H "x-api-tenantId:T001117" \
+-H "content-type:application/json" \
+http://trader.tamsc.lwork.com:10703/release/info
 
-    #-l -X POST -d '{"tenantId":"T001117", "serverId":"428", "vendor":"MT4", "accountInfo":{"group":"amity-online", "leverage":10, "enable":1, "readOnly":1, "email":"333@qq.com", "phone":{"phone":"12345689", "countryCode":"+86"}}, "baseInfo":{"lastName":"ee", "phones":{"phone":"12345689", "countryCode":"+86"}, "accountName":"wak", "email":"39344@qq.com"}, "financialInfo":{"bankBranch":"dkdf"}, "certificatesInfo":{"idUrl2":"xxx", "idType":"dd"}}' http://trader.tamsc.lwork.com:10703/v2/api/account/934fabf1-213e-4cef-96ba-ea69f43a0639/open
+#-l -X POST -d '{"tenantId":"T001117", "serverId":"428", "vendor":"MT4", "accountInfo":{"group":"amity-online", "leverage":10, "enable":1, "readOnly":1, "email":"333@qq.com", "phone":{"phone":"12345689", "countryCode":"+86"}}, "baseInfo":{"lastName":"ee", "phones":{"phone":"12345689", "countryCode":"+86"}, "accountName":"wak", "email":"39344@qq.com"}, "financialInfo":{"bankBranch":"dkdf"}, "certificatesInfo":{"idUrl2":"xxx", "idType":"dd"}}' http://trader.tamsc.lwork.com:10703/v2/api/account/934fabf1-213e-4cef-96ba-ea69f43a0639/open
 ```
 
 
