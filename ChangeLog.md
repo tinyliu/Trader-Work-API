@@ -4,69 +4,47 @@
 
 ### Add API
 
-1. [3.10 account transfer application](TradeAccountAPI.md#accountTransfer)：允许对同一 TW User 下的交易账户发起转账申请；
+1. [3.10 account transfer application](TradeAccountAPI.md#accountTransfer)：Allows a transfer request to be initiated on the same TW User trading account；
 
 ## 2017-08-17 {#20170817}
 
-### 新增 API
+### Add API
 
-1. [1.7 基础接口：查询模拟账户配置](methods.md#demotype)：获取当前租户对模拟账户的配置信息；
-2. [2.5 用户接口：用户注册-邮件](TWUserAPI.md#registerbyemail)：使用邮件通过 TW API 来注册用户；
-3. [3.6 账户接口：创建模拟账户-手机](TradeAccountAPI.md#opendemoaccount)：支持使用手机号开通模拟账户，账户信息通过短信通知；
+1. [1.7 Basic interface：Query demo account configuration](methods.md#demotype)：obtain current tenant's demo account configuration info；
+2. [2.5 User interface：User register-Email](TWUserAPI.md#registerbyemail)：Using email through TW API to register account；
+3. [3.6 Trading account interface：Create demo account-mobile](TradeAccountAPI.md#opendemoaccount)：support using mobile number to open demo account,account info notice by SMS；
 
-### 修改 API
+### Modify API
 
-1. 删除 _账户入金_ API；
+1. Delete _account deposit_ API；
 
-### 其它
+### Others
 
-1. 修正原容易产生误解的签名方式描述（RSA -&gt; SHA1WithRSA）；
-2. 补充描述：所有获取 Vendor 参数的值 MT4、MT5 必须大写；
+1. Modify the misinterpreted signature description（RSA -&gt; SHA1WithRSA）；
+2. Add description：All Vendor parameter value MT4、MT5 must be capitalized；
 
 ## 2018-08-17 {#20180817}
 
-### 修改 API
+### Modify API
 
-1. [3.2 账户入金申请](TradeAccountAPI.md#depositApply)和[3.4 账户出金申请](TradeAccountAPI.md#withdraw)：增加请求参数serverID；
+1. [3.2 Account depositApply](TradeAccountAPI.md#depositApply)和[3.4 account withdraw application](TradeAccountAPI.md#withdraw)：add request parameter serverID；
 
 
 ## 2018-09-30 {#20180930}
-### 新增 API
-1. [1.8 银行列表中新增银行](methods.md#bank)：银行列表中新增银行；
-2. [1.9 从SC获取真实账户开户字段设置](methods.md#scField)：从SupportCenter获取真实账户开户字段设置；
-3. [3.12 修改账户所有人资料基础信息](TradeAccountAPI.md#modifyBasicInfo)：修改账户所有人资料基础信息；
-4. [3.13 修改账户所有人资料财务信息](TradeAccountAPI.md#modifyFinancialInfo)：修改账户所有人资料财务信息；
-5. [3.14 修改账户所有人资料账户证件信息](TradeAccountAPI.md#modifyIdentityInfo)：修改账户所有人资料账户证件信息；
-6. [3.15 根据SC配置开真实账户](TradeAccountAPI.md#scConfiguration)：根据SC配置开真实账户；
+### add API
+1. [1.8 add banks in bank list](methods.md#bank)：add banks in bank list；
+2. [1.9 Get the Settings for the real account opening field from SC](methods.md#scField)：Get the Settings for the real account opening field from SC；
+3. [3.12 Modify the basic information of account owner](TradeAccountAPI.md#modifyBasicInfo)：Modify the basic information of account owner；
+4. [3.13 Modify the financial information of account owner](TradeAccountAPI.md#modifyFinancialInfo)：Modify the financial information of account owner；
+5. [3.14 Modify the account owner's account id information](TradeAccountAPI.md#modifyIdentityInfo)：Modify the account owner's account id information；
+6. [3.15 Open real account according to SC configuration](TradeAccountAPI.md#scConfiguration)：Open real account according to SC configuration；
 
-### 修改 API
-1. [3.4 账户出金申请](TradeAccountAPI.md#withdraw)：withdrawDTO增加字段payCurrency（出金货币）；
-2. [3.5 创建真实账户](TradeAccountAPI.md#openaccount)：accountDTO增加字段password；
+### modify API
+1. [3.4 account withdraw application](TradeAccountAPI.md#withdraw)：withdrawDTO add field payCurrency（withdraw currency）；
+2. [3.5 create real account](TradeAccountAPI.md#openaccount)：accountDTO add field password；
 
 ## 2018-11-15 {#20181115}
-### 新增 API
-1. [2.14 用户注册-发送邮件验证码](TWUserAPI.md#getVerifiyCode)：注册TW用户时发送验证码到注册邮箱；
-2. [2.15 用户注册-使用邮件验证码注册](TWUserAPI.md#useVerifiyCod)：使用邮箱收到的验证码完成注册；
-3. [3.16 根据SC配置提交真实开户任务](TradeAccountAPI.md#openAccountTask)：根据SC配置的字段提交真实开户任务
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### add API
+1. [2.14 User register-Send email verification code](TWUserAPI.md#getVerifiyCode)：Send validation code to registered mailbox when registering TW user；
+2. [2.15 User register-register by email verification code(TWUserAPI.md#useVerifiyCod)：Complete the registration using the verification code received by the mailbox；
+3. [3.16 Submit real account opening tasks according to SC configuration](TradeAccountAPI.md#openAccountTask)：Submit real account opening tasks according to SC configuration
