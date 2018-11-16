@@ -1,18 +1,17 @@
 {
+    "title" : "",
+    "description" : "",
+    "author" : "LEAN WORK HK LIMITED",
+    "language" : "en",
+    "links" : {
+        "sidebar" : {
+            "LEAN WORK" : "https://www.lwork.com"
+        }
+    },
     "plugins": [ "theme-api" ],
     "pluginsConfig": {
         "theme-api": {
-            "languages": [
-                {
-                    "lang": "js",
-                    "name": "JavaScript",
-                    "default": true
-                },
-                {
-                    "lang": "go",
-                    "name": "Go"
-                }
-            ]
+            "theme": "dark"
         }
     }
 }
