@@ -1,4 +1,3 @@
-
 When calling the API, you must provide the tenant number and API Key as the authentication for each request. You can manage your API Keys within the Management Platform in Support Center. 
 The API Key is the identity of the tenant in the Account API system. Please store it securely to ensure it is not compromised. If update is needed, it can be renew in the management platform.
 
