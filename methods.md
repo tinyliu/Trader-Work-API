@@ -1,5 +1,4 @@
-#
-1.1 Query City Code {#country}
+# 1.1 Query City Code {#country}
 
 ```
 GET /v1/api/sys/countryCity?lang={lang}&pid={pid}
