@@ -868,7 +868,7 @@ Signature Data：accountId + currency  + pubUserId + receiptAccount + receiptAcc
 POST /v1/api/account/37848f89-257a-4005-b0b4-88f1a31005a5/1234580040/transfer
 {
     "receiptAccount": "1234580207",
-    "receiptAccountName": "想回家回家~",
+    "receiptAccountName": "Tom",
     "receiptServerId": "429",
     "receiptUserId": "37848f89-257a-4005-b0b4-88f1a31005a5",
     "receiptVendor": "MT4",

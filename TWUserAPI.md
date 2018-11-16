@@ -377,7 +377,7 @@ GET /v1/api/user/{userId}/detail
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| userId | yes | int | 用户ID |
+| userId | yes | int | User ID |
 
 #### Response
 
@@ -507,14 +507,14 @@ POST /v1/api/user/{userId}/avatar
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| userId | yes | int | 用户ID |
+| userId | yes | int | User ID |
 | avatarDTO | yes | object |  |
 
 ###### avatarDTO
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| avatar | yes | string | New icon url |
+| avatar | yes | string | New profile icon url |
 
 #### Response
 
@@ -581,7 +581,7 @@ Query user `userId`account info，return parameters according to Support Center 
 
 | Name | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-| userId | yes | string | 用户ID |
+| userId | yes | string | User ID |
 
 #### Response
 
