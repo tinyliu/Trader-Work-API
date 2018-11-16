@@ -1,4 +1,4 @@
-# Trade Work API EN
+# Trade Work API
 
 Based on the Trader Work API, it provides access to account management for trading accounts, enabling custom development of the front end for Trader Work system.
 
