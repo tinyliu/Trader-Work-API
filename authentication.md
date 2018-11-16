@@ -11,7 +11,9 @@ For all interface requests, please include parameters in Headers
 
 
 `x-api-tenantId`： `Tenant ID`，Query in product details in `SupportCenter` 
+<br  />
 `x-api-token`：`API Key`，Query in product details in `SupportCenter`
+<br  />
 `content-type` :`application/json`
 <br  />
 
