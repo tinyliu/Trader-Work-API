@@ -1,9 +1,10 @@
 When calling the API, you must provide the tenant number and API Key as the authentication for each request. You can manage your API Keys within the Management Platform in Support Center. 
-The API Key is the identity of the tenant in the Account API system. Please store it securely to ensure it is not compromised. If update is needed, it can be renew in the management platform.
+
+The API Key is the identity of the tenant in the Account API system. Please store it securely to ensure it is not compromised. If update is needed, it can be renewed in the management platform.
 
 
 
-calling address：`https://account.api.lwork.com`，HTTPS style access。
+Calling address：`https://account.api.lwork.com`，using HTTPS style to access
 
 
 All values for the Vendor parameter MT4, MT5 must be capitalized.
